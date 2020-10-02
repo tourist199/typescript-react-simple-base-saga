@@ -12,6 +12,7 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
     case RepositoriesTypes.LOAD_REQUEST:
       return { ...state, loading: true };
     case RepositoriesTypes.LOAD_SUCCCES:
+      console.log('load+success');
       return {
         ...state,
         loading: false,
@@ -19,6 +20,7 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
         data: action.payload.data,
       };
     case RepositoriesTypes.LOAD_FAILURE:
+      console.log('load+failed');
       return {
         ...state,
         loading: false,
