@@ -10,14 +10,14 @@ import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 import RepositoryItem from '../RepositoryItem';
 
 interface StateProps {
-  repositories: Repository[]
+  repositories: Repository[];
 }
 
 interface DispatchProps {
-  loadRequest(): void
+  loadRequest(): void;
 }
 
-type Props = StateProps & DispatchProps
+type Props = StateProps & DispatchProps;
 
 class RepositoryList extends Component<Props> {
   componentDidMount() {
@@ -45,4 +45,7 @@ const mapStateToProps = (state: ApplicationState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(RepositoryList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(RepositoryList);
